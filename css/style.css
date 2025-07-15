@@ -1,0 +1,378 @@
+/* --- FONT SETUP --- */
+@font-face {
+    font-family: 'AA Stetica';
+    src: url('../assets/fonts/AAStetica-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Stetica';
+    src: url('../assets/fonts/AAStetica-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AA Stetica';
+    src: url('../assets/fonts/AAStetica-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* --- GLOBAL STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'AA Stetica', sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    leading-trim: NONE;
+    line-height: 38px;
+    letter-spacing: 0%;
+    background-color: #DBEBFD;
+}
+
+.container {
+    max-width: 1214px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+h1,
+h2 {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+h2 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 50px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+h3 {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 31px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #29C8FF;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #2D9CDB;
+    text-decoration: none;
+}
+
+/* --- CARD STYLES --- */
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- INTRO SECTION --- */
+.intro.card {
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 40px;
+}
+
+.intro__photo {
+    flex-shrink: 0;
+    width: 36%;
+}
+
+.intro__photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 20px 20px;
+    object-fit: cover;
+}
+
+.intro__text {
+    padding: 30px 30px 30px 40px;
+}
+
+.intro__text h1 {
+    margin-bottom: 20px;
+}
+
+.intro__text h1 span {
+    color: #29C8FF;
+    font-weight: 700;
+}
+
+.intro__text p {
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.intro__text p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/* --- MAIN CONTENT GRID --- */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "experience skills"
+        "experience tools"
+        "contacts contacts";
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.experience {
+    grid-area: experience;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.tools {
+    grid-area: tools;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacts {
+    grid-area: contacts;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- EXPERIENCE SECTION --- */
+.job:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+.job .company {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 27px;
+    leading-trim: NONE;
+    line-height: 38px;
+    letter-spacing: 0%;
+    margin-bottom: 16px;
+}
+
+.job ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.job ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+}
+
+/* --- SKILLS SECTION --- */
+.skills ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.skills ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+}
+
+/* --- TOOLS SECTION --- */
+.tool-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.tool-icons img {
+    height: 40px;
+}
+
+/* --- CONTACTS SECTION --- */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+    color: #000000;
+}
+
+.contact-item:hover {
+    opacity: 0.7;
+}
+
+.contact-item img {
+    height: 24px;
+    width: 24px;
+}
+
+/* --- PORTFOLIO SECTION --- */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    h1,
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* --- Intro Section --- */
+    .intro.card {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .intro__photo {
+        order: 1;
+        /* Move photo to the right of text */
+        width: 80px;
+        height: 80px;
+        flex-shrink: 0;
+    }
+
+    .intro__photo img {
+        border-radius: 50%;
+        /* Make it circular */
+    }
+
+    .intro__text {
+        order: 0;
+        flex-grow: 1;
+        padding: 0;
+    }
+
+    .intro__text h1 {
+        margin-bottom: 0;
+    }
+
+    /* The rule for .intro__text p is now removed */
+
+    /* --- Main Content Grid --- */
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "experience"
+            "skills"
+            "tools"
+            "contacts";
+        gap: 20px;
+    }
+
+    /* --- Contacts Section --- */
+    .contacts {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .contact-item span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* --- Tools Section --- */
+    .tool-icons {
+        flex-wrap: wrap;
+    }
+
+    /* --- Portfolio Section --- */
+    .portfolio {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1,
+    h2 {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .intro.card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .intro__photo {
+        order: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .intro__text {
+        align-items: flex-start;
+    }
+}
